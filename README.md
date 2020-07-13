@@ -23,20 +23,20 @@ A point is a class with multiple operations. It is also a data carrier for Vecto
 Vector is a module with multiple operations.
 
 ### Point
-Creating a Point
+Creating a Point:
 ```python3
 from v3d import Vector, Point
 
 p1 = Point()# This will create a zero point. (0, 0, 0)
 p2 = Point(1, 3, 1)# This will create a point at (1, 3, 1)
 ```
-Converting between Polar and Cartesian
+Converting between Polar and Cartesian:
 ```python3
 p2.to_polar()# r, theta, phi (angles are in degrees)
 # (3.3166247903554, 72.4515993862077, 71.56505117707799)
 p1.from_polar(1, 45, 0)# Overrides p1 with new x,y and z. Set override to False to get a return
 ```
-Add/Subtract
+Add/Subtract:
 ```python3
 p2.scale(2)
 # Point(x=2, y=6, z=2)
@@ -73,15 +73,15 @@ p2.is_same(p3)
 p2 == p3
 # True
 ```
-### Point
-Creating a Vector
+### Vector
+Creating a Vector:
 ```python3
 # Notice p1 is a point type. It was created before.
 v1 = Vector(p1)
 # Vector(Point(x=0.7071067811865475, y=0.0, z=0.7071067811865476))
 ```
 
-Magnitude, heading and unit vector :
+Magnitude, heading and unit vector:
 ```python3
 v1.mag()
 # 1.0
