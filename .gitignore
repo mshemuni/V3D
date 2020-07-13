@@ -131,3 +131,7 @@ dmypy.json
 # .idea and .ipynb_checkpoints
 .idea
 .ipynb_checkpoints
+/v3d.egg-info/
+/dist/
+/build/
+/.ipynb_checkpoints/
