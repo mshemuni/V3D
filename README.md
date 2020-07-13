@@ -9,7 +9,10 @@ In the other hand I needed the module with logging ability. So I added it.
 
 ## Installation
 
+```bash
 pip install v3d
+
+```
 
 ## Example
 
