@@ -408,7 +408,7 @@ class Vector:
         # Check if the other is Vector
         if isinstance(other, Vector):
             # Return True if vector and other is not parallel
-            return not self.is_parallel(other)
+            return not (self.is_parallel(other) and self.is_perpendicular(other))
         else:
             # Raise an error if the other is not a vector
             self.logger.error("Data must be Vector type")
