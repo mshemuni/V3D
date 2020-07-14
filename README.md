@@ -3,7 +3,7 @@ v3d (Stands for Vector 3D) is a 3D vector library for basic Vector operations.
 It was inspired by: https://github.com/allelos/vectors
 
 ## WHY?
-The a library was created by https://github.com/allelos/. However there was some missing parts(such as from_mag_and_dir).
+A library was created by https://github.com/allelos/. However there was some missing parts(such as from_mag_and_dir).
 
 ## Installation
 
@@ -14,13 +14,41 @@ pip install v3d
 ### Concept
 This work inspired by https://github.com/allelos/vectors
 
-V3D has no dependency other than standard math module.
+V3D has no dependency other than standard math and logging module.
 
 It consists of two parts, Point and Vector.
 
 A point is a class with multiple operations. It is also a data carrier for Vector.
 
+Operations:
+- to_polar -> Converts from cartesian to polar
+- from_polar -> Converts polar to cartesian
+- add -> Calculates addition of two points
+- subtract -> Calculates subtraction of two points. Uses add
+- scale -> Calculates multiplication a point with a scalar
+- divide -> Calculates division a point with a scalar. Uses scale
+- dist -> Calculates distance between two points or a point and origin
+- is_same -> Checks if two points are same
+
 Vector is a module with multiple operations.
+
+Operations:
+- from_points -> Creates a Vector from two points
+- add -> Calculates addition of two vectors. Uses Point.add
+- subtract -> Calculates subtraction of two vectors. Uses add
+- multiply -> Calculates cross product of two vectors or scales a vector with a scalar
+- divide -> Scales a vector with 1/scalar. Uses multiply
+- dot -> Calculates dot product of two vectors
+- rotate -> Calculates a retated vector around given alpha, beta, gamma (alpha in x, beta in y and gamma in z axis)
+- mag -> Calculates magnitude of a vector
+- unit -> Calculates unit vector of a vector
+- normal -> Calculates normal vector of a vector
+- heading -> Calculates heading direction of a vector
+- angle_between -> Calculates angle between two vectors
+- is_parallel -> Checks if two vectors are parallel
+- is_perpendicular -> Checks if two vectors are perpendicular
+- is_non_parallel -> Checks if two vectors are neither parallel nor perpendicular
+- is_same -> Checks if two vectors are same
 
 ### Point
 Creating a Point:
@@ -34,11 +62,11 @@ Converting between Polar and Cartesian:
 ```python3
 p2.to_polar()# r, theta, phi (angles are in degrees)
 # (3.3166247903554, 72.4515993862077, 71.56505117707799)
-p1.from_polar(1, 45, 0)# Overrides p1 with new x,y and z. Set override to False to get a return
+p1.from_polar(1, 45, 0)# Overrides p1 with new x, y and z. Set override to False to get a return
 ```
 Add/Subtract:
 ```python3
-#Add
+# Add
 p1.add(p2)
 # Point(x=1.7071067811865475, y=3.0, z=1.7071067811865475)
 p2.add(p1)
@@ -48,7 +76,7 @@ p1 + p2
 p2 + p1
 # Point(x=1.7071067811865475, y=3.0, z=1.7071067811865475)
 
-#Subtract
+# Subtract
 p1.subtract(p2)
 # Point(x=-0.29289321881345254, y=-3.0, z=-0.2928932188134524)
 p1 - p2
@@ -82,7 +110,7 @@ p1.dist()
 p1.dist(p2)
 # 3.028460479394408
 
-#Check if two point are the same:
+# Check if two point are the same:
 p1.is_same(p2)
 # False
 p1 == p2
@@ -112,7 +140,8 @@ abs(v1)
 # 1.0
 
 v1.heading()
-# (0.0, 45.0)
+# (45.0, 0.0)
+
 v1.unit()
 # Vector(Point(x=0.7071067811865475, y=0.0, z=0.7071067811865476))
 ```
@@ -154,7 +183,7 @@ v1.divide(2)
 v1 / 2
 # Vector(Point(x=0.35355339059327373, y=0.0, z=0.3535533905932738))
 
-# These two lines will rise an error. Vector by Vector division is not possible
+# These two lines will raise an error. Vector by Vector division is not possible
 v1.divide(v2)
 v1 / v2
 ```
@@ -171,9 +200,6 @@ v1.angle_between(v2)
 # 64.7605981793211
 
 # Check if two vector are same
-# Noice Points p2 and p3 are the same so will the vectors be
-v3 = Vector(p3)
-# False
 v1.is_same(v2)
 # False
 v1 == v2
@@ -181,7 +207,6 @@ v1 == v2
 
 # Noice Points p2 and p3 are the same so will the vectors be
 v3 = Vector(p3)
-# True
 v2.is_same(v3)
 # True
 v2 == v3
@@ -189,23 +214,23 @@ v2 == v3
 
 
 # Check if two vectors are perpendicular
-#We know cross product of two vectors will be a vector perpendicular to other two vectors
+# We know cross product of two vectors will be a vector perpendicular to other two vectors
 
 cross_product = v1 * v2
 cross_product.is_perpendicular(v1) and cross_product.is_perpendicular(v2)
 # True
 
 # Check if two vectors are parallel
-#We know cross product of two vectors will be a vector perpendicular to other two vectors
+# We know cross product of two vectors will be a vector perpendicular to other two vectors
 
 cross_product.is_parallel(v1) or cross_product.is_parallel(v2)
 # False
 
 # Check if two vectors are non_parallel
-#We know cross product of two vectors will be a vector perpendicular to other two vectors
+# We know cross product of two vectors will be a vector perpendicular to other two vectors
 
 cross_product.is_non_parallel(v1) and cross_product.is_non_parallel(v2)
-#True
+# True
 
 ```
 
