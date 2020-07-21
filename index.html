@@ -19,13 +19,14 @@
     </section>
 
     <section class="main-content">
-      <h1>
+      <img width="128" src="https://repository-images.githubusercontent.com/279284161/03424980-cb66-11ea-8696-004da6e8b5c5" alt="V3d">
+<h1>
 <a id="v3d" class="anchor" href="#v3d" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>v3d</h1>
 <p>v3d (Stands for Vector 3D) is a 3D vector library for basic Vector operations.
-It was inspired by <a href="https://github.com/allelos/vectors">https://github.com/allelos/vectors</a></p>
+It was inspired by: <a href="https://github.com/allelos/vectors">https://github.com/allelos/vectors</a></p>
 <h2>
 <a id="why" class="anchor" href="#why" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>WHY?</h2>
-<p>A library was created by <a href="https://github.com/allelos/">https://github.com/allelos/</a>. However, there were some missing parts(such as from_mag_and_dir).</p>
+<p>A library was created by <a href="https://github.com/allelos/">https://github.com/allelos/</a>. However there was some missing parts(such as from_mag_and_dir).</p>
 <h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
 <div class="highlight highlight-source-shell"><pre>pip install v3d</pre></div>
@@ -45,19 +46,19 @@ It was inspired by <a href="https://github.com/allelos/vectors">https://github.c
 <li>subtract -&gt; Calculates subtraction of two points. Uses add</li>
 <li>scale -&gt; Calculates multiplication a point with a scalar</li>
 <li>divide -&gt; Calculates division a point with a scalar. Uses scale</li>
-<li>dist -&gt; Calculates the distance between two points or a point and origin</li>
-<li>is_same -&gt; Checks if two points are the same</li>
+<li>dist -&gt; Calculates distance between two points or a point and origin</li>
+<li>is_same -&gt; Checks if two points are same</li>
 </ul>
 <p>Vector is a module with multiple operations.</p>
 <p>Operations:</p>
 <ul>
 <li>from_points -&gt; Creates a Vector from two points</li>
-<li>add -&gt; Calculates the addition of two vectors. Uses Point.add</li>
+<li>add -&gt; Calculates addition of two vectors. Uses Point.add</li>
 <li>subtract -&gt; Calculates subtraction of two vectors. Uses add</li>
-<li>multiply -&gt; Calculates the cross product of two vectors or scales a vector with a scalar</li>
+<li>multiply -&gt; Calculates cross product of two vectors or scales a vector with a scalar</li>
 <li>divide -&gt; Scales a vector with 1/scalar. Uses multiply</li>
 <li>dot -&gt; Calculates dot product of two vectors</li>
-<li>rotate -&gt; Calculates a rotated vector around given alpha, beta, gamma (alpha in x, beta in y and gamma in z axis)</li>
+<li>rotate -&gt; Calculates a retated vector around given alpha, beta, gamma (alpha in x, beta in y and gamma in z axis)</li>
 <li>mag -&gt; Calculates magnitude of a vector</li>
 <li>unit -&gt; Calculates unit vector of a vector</li>
 <li>normal -&gt; Calculates normal vector of a vector</li>
@@ -208,20 +209,20 @@ It was inspired by <a href="https://github.com/allelos/vectors">https://github.c
 
 
 <span class="pl-c"># Check if two vectors are perpendicular</span>
-<span class="pl-c"># We know the cross product of two vectors will be a vector perpendicular to the other two vectors</span>
+<span class="pl-c"># We know cross product of two vectors will be a vector perpendicular to other two vectors</span>
 
 <span class="pl-s1">cross_product</span> <span class="pl-c1">=</span> <span class="pl-s1">v1</span> <span class="pl-c1">*</span> <span class="pl-s1">v2</span>
 <span class="pl-s1">cross_product</span>.<span class="pl-en">is_perpendicular</span>(<span class="pl-s1">v1</span>) <span class="pl-c1">and</span> <span class="pl-s1">cross_product</span>.<span class="pl-en">is_perpendicular</span>(<span class="pl-s1">v2</span>)
 <span class="pl-c"># True</span>
 
 <span class="pl-c"># Check if two vectors are parallel</span>
-<span class="pl-c"># We know the cross product of two vectors will be a vector perpendicular to the other two vectors</span>
+<span class="pl-c"># We know cross product of two vectors will be a vector perpendicular to other two vectors</span>
 
 <span class="pl-s1">cross_product</span>.<span class="pl-en">is_parallel</span>(<span class="pl-s1">v1</span>) <span class="pl-c1">or</span> <span class="pl-s1">cross_product</span>.<span class="pl-en">is_parallel</span>(<span class="pl-s1">v2</span>)
 <span class="pl-c"># False</span>
 
 <span class="pl-c"># Check if two vectors are non_parallel</span>
-<span class="pl-c"># We know the cross product of two vectors will be a vector perpendicular to the other two vectors</span>
+<span class="pl-c"># We know cross product of two vectors will be a vector perpendicular to other two vectors</span>
 
 <span class="pl-s1">cross_product</span>.<span class="pl-en">is_non_parallel</span>(<span class="pl-s1">v1</span>) <span class="pl-c1">and</span> <span class="pl-s1">cross_product</span>.<span class="pl-en">is_non_parallel</span>(<span class="pl-s1">v2</span>)
 <span class="pl-c"># True</span></pre></div>
