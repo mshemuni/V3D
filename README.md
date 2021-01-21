@@ -152,11 +152,18 @@ Rotate:
 v1.rotate(alpha=45, beta=0, gamma=0)# alpha in x, beta in y and gamma in y axis
 # Vector(Point(x=0.7071067811865475, y=-0.5, z=0.5000000000000001))
 ```
-Add/Subtract:
+
+Rotate about another vector:
 ```python3
 # Creating a new vector from p2
 v2 = Vector(p2)
 
+v1.rotate_about(v2, 30)
+# Vector(Point(x=1.8625012984571216, y=0.5684060729445177, z=-0.2588190451025205))
+```
+
+Add/Subtract:
+```python3
 v1.add(v2)
 # Vector(Point(x=1.7071067811865475, y=3.0, z=1.7071067811865475))
 v1 + v2
