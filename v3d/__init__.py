@@ -1,2 +1,2 @@
-from .calc import Point
-from .calc import Vector
+from .point import Point
+from .vector import Vector

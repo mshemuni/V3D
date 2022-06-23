@@ -62,9 +62,10 @@ p2 = Point(1, 3, 1)# This will create a point at (1, 3, 1)
 ```
 Converting between Polar and Cartesian:
 ```python3
+
 p2.to_polar()# r, theta, phi (angles are in degrees)
 # (3.3166247903554, 72.4515993862077, 71.56505117707799)
-p1.from_polar(1, 45, 0)# Overrides p1 with new x, y and z. Set override to False to get a return
+p1 = Point.from_polar(1, 45, 0)# Creates a cartesian point by given polar coordinates
 ```
 Add/Subtract:
 ```python3
@@ -239,7 +240,7 @@ cross_product.is_parallel(v1) or cross_product.is_parallel(v2)
 # We know cross product of two vectors will be a vector perpendicular to other two vectors
 
 cross_product.is_non_parallel(v1) and cross_product.is_non_parallel(v2)
-# True
+# False
 
 ```
 
